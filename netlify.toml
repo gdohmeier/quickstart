@@ -11,4 +11,4 @@ HUGO_ENABLEGITINFO = "false"
   HUGO_VERSION = "0.134.0"
 
 [context.branch-deploy.environment]
-  HUGO_VERSION = "0.134.0"Copied!   
+  HUGO_VERSION = "0.134.0"
