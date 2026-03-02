@@ -6,6 +6,6 @@ menu:
   main:
     weight: 1
 ---
-{{< figure src="/images/coffeemug.svg" title="coffee mug" >}}
+{{< figure src="images/coffeemug.svg" title="coffee mug" >}}
 
 _coffee_ (French: _coffee_) is some silly shit about coffee.
