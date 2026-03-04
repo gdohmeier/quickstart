@@ -1,6 +1,6 @@
 
 title = "Garys site"
-baseURL = "https://localhost:1313"
+baseURL = "https://hugo-gary-quickstart.netlify.app"
 theme = ["github.com/theNewDynamic/gohugo-theme-ananke/v2"]
 resourceDir = "../resources"
 
