@@ -1,0 +1,7 @@
+collections: []
+locale: en-US
+media_folder: static/images/uploads
+public_folder: /images/uploads
+publish_mode: editorial_workflow
+search: true
+site_url: http://localhost:1313/

@@ -1,3 +1,7 @@
+github.com/hugomods/decap-cms v0.16.7 h1:A7tEPBcO+VaVjxti/Y3fsqpM/biMU6/QBRzyzn/Xt54=
+github.com/hugomods/decap-cms v0.16.7/go.mod h1:P9gUtk59PZYBCNVIqiovRPqI13WiKkutMtJl2YQLkMA=
+github.com/hugomods/hugopress v0.5.2 h1:wnqeqaJ38CAZx9/yuvUZqrgclsnMA+dTqihbP28vzeU=
+github.com/hugomods/hugopress v0.5.2/go.mod h1:CRYvr60xOkZOf4Atkuj+uEj2EH5pjJ39Ws3aJAkoMkA=
 github.com/theNewDynamic/gohugo-theme-ananke/v2 v2.12.1 h1:SxVd2+ADMcMiNSsCnAdBnoMMZAUfwHDCvDExZ5fRseo=
 github.com/theNewDynamic/gohugo-theme-ananke/v2 v2.12.1/go.mod h1:+a6uqEsCq0+rqHWY5W5QA3P9DNnxcbyCw+CVEB+Uveg=
 github.com/theNewDynamic/gohugo-theme-ananke/v2 v2.12.2-0.20260122231529-a5f3dd61ce53 h1:415zPjO2IJiZ0L+vFuDvrgFaf2OZDFaA2qfC0IzejMc=
