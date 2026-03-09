@@ -17,7 +17,7 @@ public_folder: /images
 collections:
   - name: 'post'
     label: 'Post'
-    folder: 'content/post'
+    folder: 'content/en/post'
     create: true
     slug: '{{year}}-{{month}}-{{day}}-{{slug}}'
     editor:

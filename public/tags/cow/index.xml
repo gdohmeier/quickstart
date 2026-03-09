@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Cow on Garys World</title>
+    <link>http://localhost:1313/tags/cow/</link>
+    <description>Recent content in Cow on Garys World</description>
+    <generator>Hugo</generator>
+    <language>en-US</language>
+    <lastBuildDate>Sun, 08 Mar 2026 21:41:00 -0400</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/cow/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Test</title>
+      <link>http://localhost:1313/post/2026-03-09-test/</link>
+      <pubDate>Sun, 08 Mar 2026 21:41:00 -0400</pubDate>
+      <guid>http://localhost:1313/post/2026-03-09-test/</guid>
+      <description>&lt;p&gt;this is a test of putting some text into the page.&lt;/p&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;backend:&#xA;  name: git-gateway&#xA;  branch: main # Branch to update (optional; defaults to master)&#xA;  squash_merges: true&#xA;  commit_messages:&#xA;    create: &amp;#34;Create {{collection}} “{{slug}}”&amp;#34;&#xA;    update: &amp;#34;Update {{collection}} “{{slug}}”&amp;#34;&#xA;    delete: &amp;#34;Delete {{collection}} “{{slug}}”&amp;#34;&#xA;    uploadMedia: &amp;#34;[skip ci] Upload “{{path}}”&amp;#34;&#xA;    deleteMedia: &amp;#34;[skip ci] Delete “{{path}}”&amp;#34;&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;h1 id=&#34;heading&#34;&gt;heading&lt;/h1&gt;&#xA;&lt;p&gt;&lt;del&gt;strikethrough&lt;/del&gt;&lt;/p&gt;&#xA;&lt;p&gt;another picture&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;https://gitlab.com/uploads/-/system/user/avatar/209463/Gary_head.jpg?width=192&#34; alt=&#34;gary&#34; title=&#34;pic of gary from gitlab&#34;&gt;&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
