@@ -48,37 +48,41 @@ recent_posts_number = 3
 networks = [
   "email",
   "facebook",
-  "bluesky",
-  "linkedin"
+  "x-twitter",
+  "instagram"
 ]
 
 [params.ananke.social.follow]
 networks = [
   "facebook",
-  "bluesky",
-  "linkedin",
-  "wikipedia"
+  "x-twitter",
+  "instagram",
+  "github"
 ]
 
 [params.ananke.social.facebook]
-username = "patrick.kollitsch"
-# profilelink = "https://www.facebook.com/patrick.kollitsch"
+username = "gary.dohmeier"
+# profilelink = "https://www.facebook.com/gary.dohmeier"
 
 [params.ananke.social.linkedin]
-username = "patrickkollitsch"
+username = "garydohmeier"
+# https://www.linkedin.com/in/garydohmeier/
 
-[params.ananke.social.bluesky]
-username = "kollitsch.dev"
+[params.ananke.social.x-twitter]
+username = "@GaryDohmeier"
 
-[params.ananke.social.wikipedia]
-username = "Hugo_(software)"
+[params.ananke.social.instagram]
+username = "gerhardtdohmeierii"
 
-[params.ananke.social.networks.wikipedia]
-slug = "wikipedia"
-label = "Wikipedia"
-color = "#0645ad"
-profile = "https://en.wikipedia.org/wiki/%s"
-icon = "wikipedia-w"
+[params.ananke.social.github]
+username = "gdohmeier"
+
+#[params.ananke.social.networks.wikipedia]
+#slug = "wikipedia"
+#label = "Wikipedia"
+#color = "#0645ad"
+#profile = "https://en.wikipedia.org/wiki/%s"
+#icon = "wikipedia-w"
 
 
 [module]
