@@ -26,10 +26,11 @@ name = "About"
 url = "/about/"
 weight = 1
 
-[[menu.main]]
-name = "Posts"
-url = "/post/"
-weight = 1
+# this one is always positioned last (ie to the right)
+#[[menu.main]]
+#name = "Posts"
+#url = "/post/"
+#weight = 1
 
 [[menu.main]]
 name = "Tags"
