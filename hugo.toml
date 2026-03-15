@@ -23,7 +23,7 @@ title = "Garys World"
 [[menu.main]]
 name = "Tags"
 url = "/tags/"
-weight = 1
+weight = 2
 
 [sitemap]
 changefreq = "monthly"
