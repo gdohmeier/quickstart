@@ -3,7 +3,6 @@ title = "Garys site"
 baseURL = "https://hugo-gary-quickstart.netlify.app"
 theme = ["github.com/theNewDynamic/gohugo-theme-ananke/v2"]
 resourceDir = "../resources"
-
 defaultContentLanguage = "en"
 sectionPagesMenu = "main"
 enableRobotsTXT = true
@@ -21,6 +20,10 @@ weight = 1
 title = "Garys World"
 # languageDirection = 'rtl' for Right-To-Left languages
 
+[[menu.main]]
+name = "Tags"
+url = "/tags/"
+weight = 1
 
 [sitemap]
 changefreq = "monthly"
