@@ -1,10 +1,6 @@
 ---
 featured_image: /images/gary-surfing.jpeg
-Featured_Image: ""
-featuredimage: /images/gary-surfing.jpeg
-Title: About
 title: About Me
-Description: about page for the website
 description: About page
 menu:
   main:
