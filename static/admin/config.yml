@@ -38,7 +38,7 @@ collections:
         fields:
           - { label: "Title", name: "title", widget: "string" }
           - { label: 'Description', name: 'description', widget: 'string' }
-          - { label: "Featured Image", name: "featuredimage", widget: image, required: false }
+          - { label: "Featured Image", name: "featured_image", widget: image, required: false }
           - { label: "Content", name: "body", widget: "markdown" }
 
 
