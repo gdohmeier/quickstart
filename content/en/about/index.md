@@ -1,10 +1,10 @@
 ---
-featured_image: /images/gary-surfing.jpeg
 title: About
 description: About page
-menu:
-  main:
-    weight: 1
+featured_image: /images/gary-surfing.jpeg
+omit_header_text: true
+type: page
+menu: main
 ---
 This is an example about page that needs to be updated with the actual about content from my site.
 
