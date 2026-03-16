@@ -1,13 +1,14 @@
 ---
+featured_image: /images/gary-surfing.jpeg
+Featured_Image: ""
+featuredimage: /images/gary-surfing.jpeg
+Title: About
+title: About Me
+Description: about page for the website
+description: About page
 menu:
   main:
     weight: 1
-Title: About
-Description: about page for the website
-Featured_Image: ""
-title: About Me
-description: About page
-featuredimage: /images/gary-surfing.jpeg
 ---
 This is an example about page that needs to be updated with the actual about content from my site.
 
