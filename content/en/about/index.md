@@ -1,6 +1,6 @@
 ---
 featured_image: /images/gary-surfing.jpeg
-title: About Me
+title: About
 description: About page
 menu:
   main:
