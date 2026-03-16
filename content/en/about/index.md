@@ -4,9 +4,10 @@ menu:
     weight: 1
 Title: About
 Description: about page for the website
-featured_image: /images/img_0728.jpg
+Featured_Image: ""
 title: About Me
 description: About page
+featuredimage: /images/gary-surfing.jpeg
 ---
 This is an example about page that needs to be updated with the actual about content from my site.
 
