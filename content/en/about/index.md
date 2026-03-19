@@ -6,7 +6,7 @@ omit_header_text: true
 type: page
 menu: main
 ---
-This is an example about page that needs to be updated with the actual about content from my site.
+{{< figure src="/images/coffeemug.svg" title="coffee mug" >}}
 
 *coffee* (French: *coffee*) is some silly shit about coffee.
 
