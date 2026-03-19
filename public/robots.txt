@@ -1,2 +1,3 @@
 User-agent: *
-Disallow: /
+Allow: /
+Sitemap: https://hugo-gary-quickstart.netlify.app/sitemap.xml
