@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Cow on Garys World</title>
-    <link>http://localhost:1313/tags/cow/</link>
-    <description>Recent content in Cow on Garys World</description>
+    <title>Article on Garys World</title>
+    <link>http://localhost:1313/tags/article/</link>
+    <description>Recent content in Article on Garys World</description>
     <generator>Hugo</generator>
     <language>en-US</language>
     <lastBuildDate>Thu, 02 Mar 2017 12:00:00 -0500</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/cow/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/article/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Articles 2</title>
       <link>http://localhost:1313/post/2017-03-02-articles-2/</link>
