@@ -1,17 +1,20 @@
 ---
 title: About
 description: About page
-featured_image: /images/gary-surfing.jpeg
+featured_image: 
 omit_header_text: true
 type: page
 menu: main
 ---
-{{< figure src="/images/coffeemug.svg" title="coffee mug" >}}
+![Me](/images/gary.jpeg) I’m am a Christian man a husband, father, and grandfather.  My family is very important to me.  This site is the third iteration of my personal website.  I worked in the technology industry for over 30 years as a programmer, project manager, consultant, and systems administrator.  I retired in 2024 and my wife and I, our two dogs and a cat are building a fully off grid house on a 10 acre homestead in highlands county florida.  
 
-*coffee* (French: *coffee*) is some silly shit about coffee.
+I still do a little coding (hence the website), this one was developed with the ananke hugo theme and I added decap cms. There is info about books, cigars, the 10 acre homestead we are building and various other stuff I come up with. The link to my instagram page has the ongoing development of our house.  The [Stores page](/tags/) will give you a breakdown of posts by subject.
 
-I’m a husband, father, grandfather and family is very important to me.
+If you are bored and you are a Star Wars fan, [check this out](https://www.asciimation.co.nz/) its pretty cool.  If you want to drop me a note, use the contact form.  Enjoy.!
 
-Here is a picture when I didn’t have grey hair…
+Ginger the crazy golden doodle and I in front of the pump house I was building for our well.
+![gary and ginger](/images/gary-ginger.jpeg)
 
-![gary](https://gitlab.com/uploads/-/system/user/avatar/209463/Gary_head.jpg?width=192 "pic of gary from gitlab")
+Surfing in Surfside Beach SC where we use to live.
+![gary surfing](/images/gary-surfing2.jpeg)
+

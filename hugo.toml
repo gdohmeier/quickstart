@@ -21,25 +21,25 @@ title = "Garys World"
 # languageDirection = 'rtl' for Right-To-Left languages
 
 
-#[[menu.main]]
-#name = "About"
-#url = "/about/"
-#weight = 1
+[[menu.main]]
+name = "About"
+url = "/about/"
+weight = 1
+
+[[menu.main]]
+name = "Contact"
+url = "/contact/"
+weight = 1
+
+[[menu.main]]
+name = "Stories"
+url = "/tags/"
+weight = 1
 
 # this one is always positioned last (ie to the right)
 #[[menu.main]]
 #name = "Posts"
 #url = "/post/"
-#weight = 1
-
-[[menu.main]]
-name = "Tags"
-url = "/tags/"
-weight = 1
-
-#[[menu.main]]
-#name = "Contact"
-#url = "/contact/"
 #weight = 1
 
 
