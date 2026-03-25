@@ -12,4 +12,3 @@ Please send me a message if you have questions or comments about the site or any
 <!-- markdownlint-disable MD034 -->\
 {{< form-contact action="https://formspree.io/f/xeelbepr" >}}
 <!-- markdownlint-enable MD034 -->
-
