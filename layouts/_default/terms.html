@@ -1,0 +1,20 @@
+{{ define "main" }}
+<article class="pa3 pa4-ns nested-copy-line-height">
+    <section class="cf ph3 ph5-l pv3 pv4-l f4 tc-l center measure-wide lh-copy nested-links {{ $.Param " text_color" |
+        compare.Default "mid-gray" }}">
+    <h3>Stories are posts that are grouped by tags. Click on a tag below for list of stories with that tag.</h3>
+    </section>
+    <section class="mw9 center pa3 pa4-ns">
+        {{ range .Data.Terms.ByCount }}
+        <div class="w-100 mb4">
+            <h1 class="f3 near-black">
+                        <a href="{{ .Page.RelPermalink }}" class="tag-link">
+                            {{ .Page.Title }}
+                            <span class="tag-count">({{ .Count }})</span>
+                        </a>
+            </h1>
+        </div>
+        {{ end }}
+    </section>
+</article>
+{{ end }}
