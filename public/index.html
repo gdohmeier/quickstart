@@ -20,6 +20,10 @@
 
 
 
+  
+    <link rel="stylesheet" href="/css/custom.css">
+  
+
 
     
 
@@ -52,8 +56,8 @@
 
   <meta itemprop="name" content="Garys Site">
   <meta itemprop="description" content="The last theme you&#39;ll ever need. Maybe.">
-  <meta itemprop="datePublished" content="2026-03-08T21:41:00-04:00">
-  <meta itemprop="dateModified" content="2026-03-08T21:41:00-04:00">
+  <meta itemprop="datePublished" content="2026-03-24T23:35:00-04:00">
+  <meta itemprop="dateModified" content="2026-03-24T23:35:00-04:00">
   <meta itemprop="wordCount" content="26">
   <meta itemprop="image" content="http://localhost:1313/cover.jpeg">
   <meta name="twitter:card" content="summary_large_image">
@@ -182,21 +186,480 @@
   <div class="db pv4 ph3 ph0-l dark-gray no-underline">
     <div class="flex-column flex-row-ns flex">
       
+      <div class="blah w-100">
+        <h1 class="f3 fw1 athelas mt0 lh-title">
+          <a href="/post/2026-03-25-mandala/" class="color-inherit dim link">
+            Mancala
+            </a>
+        </h1>
+        <div class="f6 f5-l lh-copy nested-copy-line-height nested-links">
+          <h2 id="mancala-shortcode">mancala shortcode</h2>
+<div class="app-container">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Mancala Game</title>
+        <script src="https://cdn.tailwindcss.com"></script>
+        <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+        <style>
+             
+            .mancala-board {
+                perspective: 1000px;
+            }
+
+            .pit {
+                transition: all 0.3s ease;
+                cursor: pointer;
+                transform-style: preserve-3d;
+            }
+
+            .pit:hover:not(.disabled) {
+                transform: translateY(-5px) scale(1.05);
+                box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            }
+
+            .stone {
+                animation: drop-in 0.5s ease;
+            }
+
+            @keyframes drop-in {
+                from {
+                    opacity: 0;
+                    transform: translateY(-20px);
+                }
+
+                to {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+
+            .disabled {
+                opacity: 0.5;
+                cursor: not-allowed;
+            }
+
+            #rulesModal {
+                transition: all 0.3s ease;
+            }
+        </style>
+    </head>
+
+    <body class="bg-amber-100 min-h-screen flex flex-col items-center justify-center p-4">
+        <div class="max-w-4xl w-full">
+            <header class="text-center mb-6">
+                <h1 class="text-4xl font-bold text-amber-800 mb-2">Mancala</h1>
+                <div class="flex justify-center space-x-4 mb-4">
+                    <button id="resetBtn"
+                        class="px-4 py-2 bg-amber-700 text-white rounded-lg hover:bg-amber-800 transition">
+                        <i class="fas fa-redo mr-2"></i>Reset Game
+                    </button>
+                    <button id="rulesBtn"
+                        class="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition">
+                        <i class="fas fa-question-circle mr-2"></i>How to Play
+                    </button>
+                </div>
+                <div class="flex justify-center items-center space-x-6">
+                    <div class="text-center">
+                        <div id="playerScore" class="text-3xl font-bold text-amber-700">0</div>
+                        <div class="text-sm text-gray-600">Player</div>
+                    </div>
+                    <div class="flex items-center space-x-4">
+                        <span class="text-gray-700">Difficulty:</span>
+                        <select id="difficulty" class="border rounded px-3 py-1 bg-white">
+                            <option value="easy">Easy</option>
+                            <option value="medium" selected>Medium</option>
+                            <option value="hard">Hard</option>
+                        </select>
+                    </div>
+                    <div class="text-center">
+                        <div id="computerScore" class="text-3xl font-bold text-amber-700">0</div>
+                        <div class="text-sm text-gray-600">Computer</div>
+                    </div>
+                </div>
+            </header>
+
+            <div class="mancala-board bg-amber-800 rounded-xl shadow-xl p-6 mb-6 relative overflow-hidden">
+                
+                <div class="absolute top-2 right-2 w-14 h-full flex flex-col items-center justify-center">
+                    <div id="computerBank"
+                        class="bg-amber-900 rounded-full w-14 h-40 flex items-center justify-center text-white text-2xl font-bold mb-2">
+                        0
+                    </div>
+                    <span class="text-white text-xs">Computer Bank</span>
+                </div>
+
+                <div class="flex flex-col items-center gap-2 py-2">
+                    
+                    
+
+                    
+                    <div class="flex justify-center mb-4">
+                        <div class="flex gap-x-4">
+                            
+                            <div id="pitC5"
+                                class="pit bg-amber-600 rounded-full w-14 h-14 flex items-center justify-center text-white text-lg font-bold cursor-not-allowed disabled">
+                                4</div>
+                            <div id="pitC4"
+                                class="pit bg-amber-600 rounded-full w-14 h-14 flex items-center justify-center text-white text-lg font-bold cursor-not-allowed disabled">
+                                4</div>
+                            <div id="pitC3"
+                                class="pit bg-amber-600 rounded-full w-14 h-14 flex items-center justify-center text-white text-lg font-bold cursor-not-allowed disabled">
+                                4</div>
+                            <div id="pitC2"
+                                class="pit bg-amber-600 rounded-full w-14 h-14 flex items-center justify-center text-white text-lg font-bold cursor-not-allowed disabled">
+                                4</div>
+                            <div id="pitC1"
+                                class="pit bg-amber-600 rounded-full w-14 h-14 flex items-center justify-center text-white text-lg font-bold cursor-not-allowed disabled">
+                                4</div>
+                            <div id="pitC0"
+                                class="pit bg-amber-600 rounded-full w-14 h-14 flex items-center justify-center text-white text-lg font-bold cursor-not-allowed disabled">
+                                4</div>
+                        </div>
+                    </div>
+
+                    
+                    <div class="flex justify-center mt-4 mb-4">
+                        <div class="flex gap-x-4">
+                            
+                            <div id="pitP0"
+                                class="pit bg-amber-600 rounded-full w-14 h-14 flex items-center justify-center text-white text-lg font-bold hover:bg-amber-500">
+                                4</div>
+                            <div id="pitP1"
+                                class="pit bg-amber-600 rounded-full w-14 h-14 flex items-center justify-center text-white text-lg font-bold hover:bg-amber-500">
+                                4</div>
+                            <div id="pitP2"
+                                class="pit bg-amber-600 rounded-full w-14 h-14 flex items-center justify-center text-white text-lg font-bold hover:bg-amber-500">
+                                4</div>
+                            <div id="pitP3"
+                                class="pit bg-amber-600 rounded-full w-14 h-14 flex items-center justify-center text-white text-lg font-bold hover:bg-amber-500">
+                                4</div>
+                            <div id="pitP4"
+                                class="pit bg-amber-600 rounded-full w-14 h-14 flex items-center justify-center text-white text-lg font-bold hover:bg-amber-500">
+                                4</div>
+                            <div id="pitP5"
+                                class="pit bg-amber-600 rounded-full w-14 h-14 flex items-center justify-center text-white text-lg font-bold hover:bg-amber-500">
+                                4</div>
+                        </div>
+                    </div>
+
+                </div>
+
+
+                
+                <div class="absolute top-2 left-2 w-14 h-full flex flex-col items-center justify-center">
+                    <div id="playerBank"
+                        class="bg-amber-900 rounded-full w-14 h-40 flex items-center justify-center text-white text-2xl font-bold mb-2">
+                        0
+                    </div>
+                    <span class="text-white text-xs">Player Bank</span>
+                </div>
+
+                
+                <div id="turnIndicator"
+                    class="absolute bottom-2 left-1/2 transform -translate-x-1/2 bg-amber-700 text-white px-4 py-1 rounded-full text-sm">
+                    Your Turn
+                </div>
+            </div>
+
+            
+            <div id="statusMessage" class="text-center text-lg text-amber-800 font-semibold mb-6 h-8">
+                Click on your pits to start playing!
+            </div>
+        </div>
+
+        
+        <div id="rulesModal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden z-50">
+            <div class="bg-white rounded-lg p-6 max-w-lg w-full max-h-[80vh] overflow-y-auto">
+                <div class="flex justify-between items-center mb-4">
+                    <h2 class="text-2xl font-bold text-amber-800">How to Play Mancala</h2>
+                    <button id="closeRulesBtn" class="text-gray-500 hover:text-gray-700">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+                <div class="space-y-4">
+                    <div>
+                        <h3 class="text-xl font-semibold text-amber-700">Objective</h3>
+                        <p>Collect as many stones as possible in your bank by the end of the game.</p>
+        </div>
+        <a href="/post/2026-03-25-mandala/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
+      </div>
+    </div>
+  </div>
+</article>
+
+          </div>
+        
+          <div class="w-100 mb4 relative">
+            
+<article class="bb b--black-10">
+  <div class="db pv4 ph3 ph0-l dark-gray no-underline">
+    <div class="flex-column flex-row-ns flex">
+      
+      <div class="blah w-100">
+        <h1 class="f3 fw1 athelas mt0 lh-title">
+          <a href="/post/2026-03-25-rocks/" class="color-inherit dim link">
+            Rocks
+            </a>
+        </h1>
+        <div class="f6 f5-l lh-copy nested-copy-line-height nested-links">
+          <h2 id="rocks-shortcode">rocks shortcode</h2>
+<div class="app-container"
+    style="position: relative; width: 100%; max-width: 680px; margin: 2rem auto; background: #000; border: 2px solid #333; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.6);">
+
+    <div style="position: relative; width: 640px; height: 480px; margin: 0 auto;">
+        <canvas id="rocks-canvas" width="640" height="480" style="display: block;"></canvas>
+
+        <div
+            style="position: absolute; top: 10px; left: 10px; z-index: 20; display: flex; flex-direction: column; gap: 6px;">
+            <button class="rocks-btn" data-action="start">Start</button>
+            <button class="rocks-btn" data-action="stop">Stop</button>
+            <button class="rocks-btn" data-action="info">Info</button>
+        </div>
+
+        <div id="rocks-info"
+            style="position: absolute; top: 10px; right: 10px; background: rgba(0,0,0,0.85); padding: 10px 14px; border: 1px solid #555; border-radius: 6px; font-family: monospace; font-size: 13px; color: #eee; display: none; pointer-events: none; z-index: 15;">
+            <table style="border-collapse: collapse;">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>X</th>
+                        <th>Y</th>
+                    </tr>
+                </thead>
+                <tbody id="rocks-pos-tbody"></tbody>
+            </table>
+        </div>
+    </div>
+
+    <style>
+        .rocks-btn {
+            width: 78px;
+            padding: 6px 0;
+            font-size: 12px;
+            background: rgba(70, 70, 70, 0.9);
+            color: #eee;
+            border: 1px solid #777;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.13s;
+        }
+
+        .rocks-btn:hover {
+            background: rgba(100, 100, 100, 0.9);
+            border-color: #aaa;
+        }
+
+        .rocks-btn.active {
+            background: #2a6 !important;
+            border-color: #4a8 !important;
+        }
+    </style>
+
+    <script>
+        (function () {
+            
+
+            const container = document.currentScript.closest('.app-container');
+            if (!container) return;
+
+            const canvas = container.querySelector('#rocks-canvas');
+            if (!canvas) return;
+
+            const ctx = canvas.getContext('2d');
+            const infoPanel = container.querySelector('#rocks-info');
+            const posTbody = container.querySelector('#rocks-pos-tbody');
+            const buttons = container.querySelectorAll('.rocks-btn');
+
+            const WIDTH = 640;
+            const HEIGHT = 480;
+
+            let shapes = [];
+            let running = false;
+            let showInfo = false;
+            let rafId = null;
+            let observer = null;
+
+            class Shape {
+                constructor() { this.reset(); }
+                reset() {
+                    this.x = 80 + Math.random() * (WIDTH - 160);
+                    this.y = 80 + Math.random() * (HEIGHT - 160);
+                    this.vx = (Math.random() - 0.5) * 4.8;
+                    this.vy = (Math.random() - 0.5) * 4.8;
+                    this.sides = 5 + Math.floor(Math.random() * 4);
+                    this.radius = 26 + Math.random() * 38;
+                    this.points = [];
+                    const step = Math.PI * 2 / this.sides;
+                    for (let i = 0; i < this.sides; i++) {
+                        const a = i * step + (Math.random() - 0.5) * 1.1;
+                        const r = this.radius * (0.6 + Math.random() * 0.75);
+                        this.points.push({ dx: Math.cos(a) * r, dy: Math.sin(a) * r });
+                    }
+                    this.maxR = this.radius * 1.2;
+                }
+                update() {
+                    this.x += this.vx;
+                    this.y += this.vy;
+                    if (this.x - this.maxR < 0 || this.x + this.maxR > WIDTH) { this.vx *= -1; this.x = Math.max(this.maxR, Math.min(WIDTH - this.maxR, this.x)); }
+                    if (this.y - this.maxR < 0 || this.y + this.maxR > HEIGHT) { this.vy *= -1; this.y = Math.max(this.maxR, Math.min(HEIGHT - this.maxR, this.y)); }
+                }
+                draw() {
+                    ctx.save();
+                    ctx.translate(this.x, this.y);
+                    ctx.shadowColor = 'white';
+                    ctx.shadowBlur = 16;
+                    ctx.beginPath();
+                    ctx.moveTo(this.points[0].dx, this.points[0].dy);
+                    this.points.forEach(p => ctx.lineTo(p.dx, p.dy));
+                    ctx.closePath();
+                    ctx.fillStyle = 'white';
+                    ctx.fill();
+                    ctx.strokeStyle = '#ccc';
+                    ctx.lineWidth = 1.8;
+                    ctx.stroke();
+                    ctx.restore();
+                }
+            }
+
+            function createShapes() {
+                shapes = Array.from({ length: 7 }, () => new Shape());
+            }
+
+            function updateTable() {
+                posTbody.innerHTML = '';
+                shapes.forEach((s, i) => {
+                    const tr = document.createElement('tr');
+                    tr.innerHTML = `<td style="color:#9f9;">${i + 1}</td><td>${Math.round(s.x)}</td><td>${Math.round(s.y)}</td>`;
+                    posTbody.appendChild(tr);
+                });
+            }
+
+            function animate() {
+                if (!running || !document.body.contains(canvas)) {
+                    rafId = null;
+                    return;
+                }
+
+                ctx.fillStyle = 'black';
+                ctx.fillRect(0, 0, WIDTH, HEIGHT);
+
+                shapes.forEach(s => {
+                    if (running) s.update();
+                    s.draw();
+                });
+
+                if (showInfo) updateTable();
+
+                rafId = requestAnimationFrame(animate);
+            }
+
+            function startAnimation() {
+                if (running) return;
+                running = true;
+                buttons[0].classList.add('active');   
+                buttons[1].classList.remove('active'); 
+                if (!rafId) rafId = requestAnimationFrame(animate);
+            }
+
+            function stopAnimation() {
+                if (!running) return;
+                running = false;
+                buttons[1].classList.add('active');
+                buttons[0].classList.remove('active');
+                
+                ctx.fillStyle = 'black';
+                ctx.fillRect(0, 0, WIDTH, HEIGHT);
+                shapes.forEach(s => s.draw());
+                if (showInfo) updateTable();
+            }
+
+            function toggleInfo() {
+                showInfo = !showInfo;
+                infoPanel.style.display = showInfo ? 'block' : 'none';
+                buttons[2].classList.toggle('active', showInfo);
+                if (showInfo && running) updateTable();
+            }
+
+            
+            buttons.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const action = btn.dataset.action;
+                    if (action === 'start') startAnimation();
+                    if (action === 'stop') stopAnimation();
+                    if (action === 'info') toggleInfo();
+                });
+            });
+
+            
+            observer = new IntersectionObserver(entries => {
+                if (entries[0].isIntersecting) {
+                    if (running && !rafId) rafId = requestAnimationFrame(animate);
+                } else {
+                    if (rafId) {
+                        cancelAnimationFrame(rafId);
+                        rafId = null;
+                    }
+                }
+            }, { threshold: 0.1 });
+
+            observer.observe(canvas);
+
+            
+            const cleanup = () => {
+                if (rafId) cancelAnimationFrame(rafId);
+                if (observer) observer.disconnect();
+            };
+
+            
+            const mo = new MutationObserver(() => {
+                if (!document.body.contains(container)) cleanup();
+            });
+            mo.observe(document.body, { childList: true, subtree: true });
+
+            
+            createShapes();
+            
+            running = false;
+
+            
+            
+
+        })();
+    </script>
+</div>
+<p>Vvvvvvv</p>
+        </div>
+        <a href="/post/2026-03-25-rocks/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
+      </div>
+    </div>
+  </div>
+</article>
+
+          </div>
+        
+          <div class="w-100 mb4 relative">
+            
+<article class="bb b--black-10">
+  <div class="db pv4 ph3 ph0-l dark-gray no-underline">
+    <div class="flex-column flex-row-ns flex">
+      
           
         <div class="pr3-ns mb4 mb0-ns w-100 w-40-ns">
           <a href="/post/2026-03-09-test/" class="db grow">
-            <img src="http://localhost:1313/images/agatedmess320.jpg" class="img" alt="image from Test">
+            <img src="http://localhost:1313/images/coffeemug.svg" class="img" alt="image from Test One">
           </a>
         </div>
       
       <div class="blah w-100 w-60-ns pl3-ns">
         <h1 class="f3 fw1 athelas mt0 lh-title">
           <a href="/post/2026-03-09-test/" class="color-inherit dim link">
-            Test
+            Test One
             </a>
         </h1>
         <div class="f6 f5-l lh-copy nested-copy-line-height nested-links">
-          <p>this is a test of putting some text into the page.</p>
+          <p>This is a test of putting some text into the page.</p>
 <pre tabindex="0"><code>backend:
   name: git-gateway
   branch: main # Branch to update (optional; defaults to master)
@@ -226,85 +689,6 @@
 
           </div>
         
-          <div class="w-100 mb4 relative">
-            
-<article class="bb b--black-10">
-  <div class="db pv4 ph3 ph0-l dark-gray no-underline">
-    <div class="flex-column flex-row-ns flex">
-      
-          
-        <div class="pr3-ns mb4 mb0-ns w-100 w-40-ns">
-          <a href="/post/2026-03-01-firstpost-1/" class="db grow">
-            <img src="http://localhost:1313/images/agatedmess320.jpg" class="img" alt="image from Chapter I: The Grand Hall">
-          </a>
-        </div>
-      
-      <div class="blah w-100 w-60-ns pl3-ns">
-        <h1 class="f3 fw1 athelas mt0 lh-title">
-          <a href="/post/2026-03-01-firstpost-1/" class="color-inherit dim link">
-            Chapter I: The Grand Hall
-            </a>
-        </h1>
-        <div class="f6 f5-l lh-copy nested-copy-line-height nested-links">
-          <p>Three hundred and forty-eight years, six months, and nineteen days ago
-to-day, the Parisians awoke to the sound of all the bells in the triple
-circuit of the city, the university, and the town ringing a full peal.</p>
-<p>The sixth of January, 1482, is not, however, a day of which history has
-preserved the memory. There was nothing notable in the event which thus
-set the bells and the bourgeois of Paris in a ferment from early morning.
-It was neither an assault by the Picards nor the Burgundians, nor a hunt
-led along in procession, nor a revolt of scholars in the town of Laas, nor
-an entry of “our much dread lord, monsieur the king,” nor even a pretty
-hanging of male and female thieves by the courts of Paris. Neither was it
-the arrival, so frequent in the fifteenth century, of some plumed and
-bedizened embassy. It was barely two days since the last cavalcade of that
-nature, that of the Flemish ambassadors charged with concluding the
-marriage between the dauphin and Marguerite of Flanders, had made its
-entry into Paris, to the great annoyance of M. le Cardinal de Bourbon,
-who, for the sake of pleasing the king, had been obliged to assume an
-amiable mien towards this whole rustic rabble of Flemish burgomasters, and
-to regale them at his Hôtel de Bourbon, with a very “pretty morality,
-allegorical satire, and farce,” while a driving rain drenched the
-magnificent tapestries at his door.</p>
-        </div>
-        <a href="/post/2026-03-01-firstpost-1/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
-      </div>
-    </div>
-  </div>
-</article>
-
-          </div>
-        
-          <div class="w-100 mb4 relative">
-            
-<article class="bb b--black-10">
-  <div class="db pv4 ph3 ph0-l dark-gray no-underline">
-    <div class="flex-column flex-row-ns flex">
-      
-          
-        <div class="pr3-ns mb4 mb0-ns w-100 w-40-ns">
-          <a href="/post/2026-02-01-index/" class="db grow">
-            <img src="http://localhost:1313/images/img_0728.jpg" class="img" alt="image from Articles">
-          </a>
-        </div>
-      
-      <div class="blah w-100 w-60-ns pl3-ns">
-        <h1 class="f3 fw1 athelas mt0 lh-title">
-          <a href="/post/2026-02-01-index/" class="color-inherit dim link">
-            Articles
-            </a>
-        </h1>
-        <div class="f6 f5-l lh-copy nested-copy-line-height nested-links">
-          <p>Articles are paginated with only three posts here for example. You can set the number of entries to show on this page with the &ldquo;pagination&rdquo; setting in the config file.</p>
-        </div>
-        <a href="/post/2026-02-01-index/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
-      </div>
-    </div>
-  </div>
-</article>
-
-          </div>
-        
       </section>
 
       
@@ -313,8 +697,26 @@ magnificent tapestries at his door.</p>
           
           
             <h2 class="f5 fw4 mb4 dib mr3">
+              <a href="/post/2026-03-01-firstpost-1/" class="link black dim">
+                Chapter I: The Grand Hall
+              </a>
+            </h2>
+          
+            <h2 class="f5 fw4 mb4 dib mr3">
+              <a href="/post/2026-02-01-index/" class="link black dim">
+                Articles 1
+              </a>
+            </h2>
+          
+            <h2 class="f5 fw4 mb4 dib mr3">
               <a href="/post/2017-03-02-articles-2/" class="link black dim">
                 Articles 2
+              </a>
+            </h2>
+          
+            <h2 class="f5 fw4 mb4 dib mr3">
+              <a href="/post/2017-03-02-mancala-picture/" class="link black dim">
+                Mancala picture
               </a>
             </h2>
           

@@ -20,6 +20,10 @@
 
 
 
+  
+    <link rel="stylesheet" href="/css/custom.css">
+  
+
 
     
 
@@ -51,8 +55,8 @@
 
   <meta itemprop="name" content="Test">
   <meta itemprop="description" content="The last theme you&#39;ll ever need. Maybe.">
-  <meta itemprop="datePublished" content="2026-03-08T21:41:00-04:00">
-  <meta itemprop="dateModified" content="2026-03-08T21:41:00-04:00">
+  <meta itemprop="datePublished" content="2026-03-24T22:19:00-04:00">
+  <meta itemprop="dateModified" content="2026-03-24T22:19:00-04:00">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Test">
   <meta name="twitter:description" content="The last theme you&#39;ll ever need. Maybe.">
@@ -147,25 +151,27 @@
 
 
     <main class="pb7" role="main">
+      <article class="cf ph3 ph5-l pv3 pv4-l f4 tc-l center measure-wide lh-copy nested-links mid-gray">
+    
+  </article>
+
+  <div class="pa3 pa4-ns w-100 w-70-ns center">
+    <section class="w-100 mw8 grid-layout">
       
-  <article class="pa3 pa4-ns nested-copy-line-height">
-    <section class="cf ph3 ph5-l pv3 pv4-l f4 tc-l center measure-wide lh-copy nested-links mid-gray"></section>
-    <section class="flex-ns mt5 flex-wrap justify-around">
-      
-        <div class="w-100 w-30-l mb4 relative bg-white">
+        <div class="relative w-100 mb4">
             <div class="mb3 pa4 mid-gray overflow-hidden">
     
       <div class="f6">
-        March 8, 2026
+        March 24, 2026
       </div>
     
     <h1 class="f3 near-black">
       <a href="/post/2026-03-09-test/" class="link black dim">
-        Test
+        Test One
       </a>
     </h1>
     <div class="nested-links f5 lh-copy nested-copy-line-height">
-      <p>this is a test of putting some text into the page.</p>
+      <p>This is a test of putting some text into the page.</p>
 <pre tabindex="0"><code>backend:
   name: git-gateway
   branch: main # Branch to update (optional; defaults to master)
@@ -192,7 +198,7 @@
 
         </div>
       
-        <div class="w-100 w-30-l mb4 relative bg-white">
+        <div class="relative w-100 mb4">
             <div class="mb3 pa4 mid-gray overflow-hidden">
     
       <div class="f6">
@@ -231,7 +237,7 @@ magnificent tapestries at his door.</p>
 
         </div>
       
-        <div class="w-100 w-30-l mb4 relative bg-white">
+        <div class="relative w-100 mb4">
             <div class="mb3 pa4 mid-gray overflow-hidden">
     
       <div class="f6">
@@ -240,11 +246,19 @@ magnificent tapestries at his door.</p>
     
     <h1 class="f3 near-black">
       <a href="/post/2026-02-01-index/" class="link black dim">
-        Articles
+        Articles 1
       </a>
     </h1>
     <div class="nested-links f5 lh-copy nested-copy-line-height">
       <p>Articles are paginated with only three posts here for example. You can set the number of entries to show on this page with the &ldquo;pagination&rdquo; setting in the config file.</p>
+<p><img src="/images/gary-ginger.jpeg" alt="My again" title="gary and ginger"></p>
+<p><code>{{ define &quot;main&quot; }}</code></p>
+<p>``</p>
+<p><code>  {{- $config := site.Params.ananke.home -}}</code></p>
+<p><code>  {{- $text_alignment := &quot;tc-l&quot; -}}</code></p>
+<p><code>  {{- if eq $config.content_alignment &quot;left&quot; -}}</code></p>
+<p><code>    {{- $text_alignment = &quot;tl-l&quot; -}}</code></p>
+<p><code>  {{- else if eq $config.content_alignment &quot;right&quot; -}}</code></p>
     </div>
   <a href="/post/2026-02-01-index/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
   </div>
@@ -252,7 +266,7 @@ magnificent tapestries at his door.</p>
         </div>
       
     </section>
-    
+   
     <ul class="pagination pagination-default">
       <li class="page-item disabled">
         <a aria-disabled="true" aria-label="First" class="page-link" role="button" tabindex="-1"><span aria-hidden="true">&laquo;&laquo;</span></a>
@@ -272,7 +286,8 @@ magnificent tapestries at his door.</p>
       <li class="page-item">
         <a href="/tags/test/page/2/" aria-label="Last" class="page-link" role="button"><span aria-hidden="true">&raquo;&raquo;</span></a>
       </li>
-    </ul></article>
+    </ul></div>
+
 
     </main>
     <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">

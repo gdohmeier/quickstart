@@ -20,6 +20,10 @@
 
 
 
+  
+    <link rel="stylesheet" href="/css/custom.css">
+  
+
 
     
 
@@ -51,8 +55,8 @@
 
   <meta itemprop="name" content="Games">
   <meta itemprop="description" content="The last theme you&#39;ll ever need. Maybe.">
-  <meta itemprop="datePublished" content="2026-03-08T21:41:00-04:00">
-  <meta itemprop="dateModified" content="2026-03-08T21:41:00-04:00">
+  <meta itemprop="datePublished" content="2026-03-24T23:34:00-04:00">
+  <meta itemprop="dateModified" content="2026-03-24T23:34:00-04:00">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Games">
   <meta name="twitter:description" content="The last theme you&#39;ll ever need. Maybe.">
@@ -147,25 +151,272 @@
 
 
     <main class="pb7" role="main">
+      <article class="cf ph3 ph5-l pv3 pv4-l f4 tc-l center measure-wide lh-copy nested-links mid-gray">
+    
+  </article>
+
+  <div class="pa3 pa4-ns w-100 w-70-ns center">
+    <section class="w-100 mw8 grid-layout">
       
-  <article class="pa3 pa4-ns nested-copy-line-height">
-    <section class="cf ph3 ph5-l pv3 pv4-l f4 tc-l center measure-wide lh-copy nested-links mid-gray"></section>
-    <section class="flex-ns mt5 flex-wrap justify-around">
-      
-        <div class="w-100 w-30-l mb4 relative bg-white">
+        <div class="relative w-100 mb4">
             <div class="mb3 pa4 mid-gray overflow-hidden">
     
       <div class="f6">
-        March 8, 2026
+        March 24, 2026
+      </div>
+    
+    <h1 class="f3 near-black">
+      <a href="/post/2026-03-25-rocks/" class="link black dim">
+        Rocks
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      <h2 id="rocks-shortcode">rocks shortcode</h2>
+<div class="app-container"
+    style="position: relative; width: 100%; max-width: 680px; margin: 2rem auto; background: #000; border: 2px solid #333; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.6);">
+
+    <div style="position: relative; width: 640px; height: 480px; margin: 0 auto;">
+        <canvas id="rocks-canvas" width="640" height="480" style="display: block;"></canvas>
+
+        <div
+            style="position: absolute; top: 10px; left: 10px; z-index: 20; display: flex; flex-direction: column; gap: 6px;">
+            <button class="rocks-btn" data-action="start">Start</button>
+            <button class="rocks-btn" data-action="stop">Stop</button>
+            <button class="rocks-btn" data-action="info">Info</button>
+        </div>
+
+        <div id="rocks-info"
+            style="position: absolute; top: 10px; right: 10px; background: rgba(0,0,0,0.85); padding: 10px 14px; border: 1px solid #555; border-radius: 6px; font-family: monospace; font-size: 13px; color: #eee; display: none; pointer-events: none; z-index: 15;">
+            <table style="border-collapse: collapse;">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>X</th>
+                        <th>Y</th>
+                    </tr>
+                </thead>
+                <tbody id="rocks-pos-tbody"></tbody>
+            </table>
+        </div>
+    </div>
+
+    <style>
+        .rocks-btn {
+            width: 78px;
+            padding: 6px 0;
+            font-size: 12px;
+            background: rgba(70, 70, 70, 0.9);
+            color: #eee;
+            border: 1px solid #777;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.13s;
+        }
+
+        .rocks-btn:hover {
+            background: rgba(100, 100, 100, 0.9);
+            border-color: #aaa;
+        }
+
+        .rocks-btn.active {
+            background: #2a6 !important;
+            border-color: #4a8 !important;
+        }
+    </style>
+
+    <script>
+        (function () {
+            
+
+            const container = document.currentScript.closest('.app-container');
+            if (!container) return;
+
+            const canvas = container.querySelector('#rocks-canvas');
+            if (!canvas) return;
+
+            const ctx = canvas.getContext('2d');
+            const infoPanel = container.querySelector('#rocks-info');
+            const posTbody = container.querySelector('#rocks-pos-tbody');
+            const buttons = container.querySelectorAll('.rocks-btn');
+
+            const WIDTH = 640;
+            const HEIGHT = 480;
+
+            let shapes = [];
+            let running = false;
+            let showInfo = false;
+            let rafId = null;
+            let observer = null;
+
+            class Shape {
+                constructor() { this.reset(); }
+                reset() {
+                    this.x = 80 + Math.random() * (WIDTH - 160);
+                    this.y = 80 + Math.random() * (HEIGHT - 160);
+                    this.vx = (Math.random() - 0.5) * 4.8;
+                    this.vy = (Math.random() - 0.5) * 4.8;
+                    this.sides = 5 + Math.floor(Math.random() * 4);
+                    this.radius = 26 + Math.random() * 38;
+                    this.points = [];
+                    const step = Math.PI * 2 / this.sides;
+                    for (let i = 0; i < this.sides; i++) {
+                        const a = i * step + (Math.random() - 0.5) * 1.1;
+                        const r = this.radius * (0.6 + Math.random() * 0.75);
+                        this.points.push({ dx: Math.cos(a) * r, dy: Math.sin(a) * r });
+                    }
+                    this.maxR = this.radius * 1.2;
+                }
+                update() {
+                    this.x += this.vx;
+                    this.y += this.vy;
+                    if (this.x - this.maxR < 0 || this.x + this.maxR > WIDTH) { this.vx *= -1; this.x = Math.max(this.maxR, Math.min(WIDTH - this.maxR, this.x)); }
+                    if (this.y - this.maxR < 0 || this.y + this.maxR > HEIGHT) { this.vy *= -1; this.y = Math.max(this.maxR, Math.min(HEIGHT - this.maxR, this.y)); }
+                }
+                draw() {
+                    ctx.save();
+                    ctx.translate(this.x, this.y);
+                    ctx.shadowColor = 'white';
+                    ctx.shadowBlur = 16;
+                    ctx.beginPath();
+                    ctx.moveTo(this.points[0].dx, this.points[0].dy);
+                    this.points.forEach(p => ctx.lineTo(p.dx, p.dy));
+                    ctx.closePath();
+                    ctx.fillStyle = 'white';
+                    ctx.fill();
+                    ctx.strokeStyle = '#ccc';
+                    ctx.lineWidth = 1.8;
+                    ctx.stroke();
+                    ctx.restore();
+                }
+            }
+
+            function createShapes() {
+                shapes = Array.from({ length: 7 }, () => new Shape());
+            }
+
+            function updateTable() {
+                posTbody.innerHTML = '';
+                shapes.forEach((s, i) => {
+                    const tr = document.createElement('tr');
+                    tr.innerHTML = `<td style="color:#9f9;">${i + 1}</td><td>${Math.round(s.x)}</td><td>${Math.round(s.y)}</td>`;
+                    posTbody.appendChild(tr);
+                });
+            }
+
+            function animate() {
+                if (!running || !document.body.contains(canvas)) {
+                    rafId = null;
+                    return;
+                }
+
+                ctx.fillStyle = 'black';
+                ctx.fillRect(0, 0, WIDTH, HEIGHT);
+
+                shapes.forEach(s => {
+                    if (running) s.update();
+                    s.draw();
+                });
+
+                if (showInfo) updateTable();
+
+                rafId = requestAnimationFrame(animate);
+            }
+
+            function startAnimation() {
+                if (running) return;
+                running = true;
+                buttons[0].classList.add('active');   
+                buttons[1].classList.remove('active'); 
+                if (!rafId) rafId = requestAnimationFrame(animate);
+            }
+
+            function stopAnimation() {
+                if (!running) return;
+                running = false;
+                buttons[1].classList.add('active');
+                buttons[0].classList.remove('active');
+                
+                ctx.fillStyle = 'black';
+                ctx.fillRect(0, 0, WIDTH, HEIGHT);
+                shapes.forEach(s => s.draw());
+                if (showInfo) updateTable();
+            }
+
+            function toggleInfo() {
+                showInfo = !showInfo;
+                infoPanel.style.display = showInfo ? 'block' : 'none';
+                buttons[2].classList.toggle('active', showInfo);
+                if (showInfo && running) updateTable();
+            }
+
+            
+            buttons.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const action = btn.dataset.action;
+                    if (action === 'start') startAnimation();
+                    if (action === 'stop') stopAnimation();
+                    if (action === 'info') toggleInfo();
+                });
+            });
+
+            
+            observer = new IntersectionObserver(entries => {
+                if (entries[0].isIntersecting) {
+                    if (running && !rafId) rafId = requestAnimationFrame(animate);
+                } else {
+                    if (rafId) {
+                        cancelAnimationFrame(rafId);
+                        rafId = null;
+                    }
+                }
+            }, { threshold: 0.1 });
+
+            observer.observe(canvas);
+
+            
+            const cleanup = () => {
+                if (rafId) cancelAnimationFrame(rafId);
+                if (observer) observer.disconnect();
+            };
+
+            
+            const mo = new MutationObserver(() => {
+                if (!document.body.contains(container)) cleanup();
+            });
+            mo.observe(document.body, { childList: true, subtree: true });
+
+            
+            createShapes();
+            
+            running = false;
+
+            
+            
+
+        })();
+    </script>
+</div>
+<p>Vvvvvvv</p>
+    </div>
+  <a href="/post/2026-03-25-rocks/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
+  </div>
+
+        </div>
+      
+        <div class="relative w-100 mb4">
+            <div class="mb3 pa4 mid-gray overflow-hidden">
+    
+      <div class="f6">
+        March 24, 2026
       </div>
     
     <h1 class="f3 near-black">
       <a href="/post/2026-03-09-test/" class="link black dim">
-        Test
+        Test One
       </a>
     </h1>
     <div class="nested-links f5 lh-copy nested-copy-line-height">
-      <p>this is a test of putting some text into the page.</p>
+      <p>This is a test of putting some text into the page.</p>
 <pre tabindex="0"><code>backend:
   name: git-gateway
   branch: main # Branch to update (optional; defaults to master)
@@ -193,7 +444,8 @@
         </div>
       
     </section>
-    </article>
+   </div>
+
 
     </main>
     <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">

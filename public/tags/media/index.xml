@@ -9,11 +9,18 @@
     <lastBuildDate>Thu, 02 Mar 2017 12:00:00 -0500</lastBuildDate>
     <atom:link href="http://localhost:1313/tags/media/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Articles</title>
+      <title>Articles 1</title>
       <link>http://localhost:1313/post/2026-02-01-index/</link>
       <pubDate>Thu, 02 Mar 2017 12:00:00 -0500</pubDate>
       <guid>http://localhost:1313/post/2026-02-01-index/</guid>
-      <description>&lt;p&gt;Articles are paginated with only three posts here for example. You can set the number of entries to show on this page with the &amp;ldquo;pagination&amp;rdquo; setting in the config file.&lt;/p&gt;</description>
+      <description>&lt;p&gt;Articles are paginated with only three posts here for example. You can set the number of entries to show on this page with the &amp;ldquo;pagination&amp;rdquo; setting in the config file.&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/images/gary-ginger.jpeg&#34; alt=&#34;My again&#34; title=&#34;gary and ginger&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;code&gt;{{ define &amp;quot;main&amp;quot; }}&lt;/code&gt;&lt;/p&gt;&#xA;&lt;p&gt;``&lt;/p&gt;&#xA;&lt;p&gt;&lt;code&gt;  {{- $config := site.Params.ananke.home -}}&lt;/code&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;code&gt;  {{- $text_alignment := &amp;quot;tc-l&amp;quot; -}}&lt;/code&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;code&gt;  {{- if eq $config.content_alignment &amp;quot;left&amp;quot; -}}&lt;/code&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;code&gt;    {{- $text_alignment = &amp;quot;tl-l&amp;quot; -}}&lt;/code&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;code&gt;  {{- else if eq $config.content_alignment &amp;quot;right&amp;quot; -}}&lt;/code&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Mancala picture</title>
+      <link>http://localhost:1313/post/2017-03-02-mancala-picture/</link>
+      <pubDate>Thu, 02 Mar 2017 12:00:00 -0500</pubDate>
+      <guid>http://localhost:1313/post/2017-03-02-mancala-picture/</guid>
+      <description>&lt;p&gt;Articles are paginated with only three posts here for example. You can set the number of entries to show on this page with the &amp;ldquo;pagination&amp;rdquo; setting in the config file.Articles are paginated with only three posts here for example. You can set the number of entries to show on this page with the &amp;ldquo;pagination&amp;rdquo; setting in the config file.Articles are paginated with only three posts here for example. You can set the number of entries to show on this page with the &amp;ldquo;pagination&amp;rdquo; setting in the config file.Articles are paginated with only three posts here for example. You can set the number of entries to show on this page with the &amp;ldquo;pagination&amp;rdquo; setting in the config file.Articles are paginated with only three posts here for example. You can set the number of entries to show on this page with the &amp;ldquo;pagination&amp;rdquo; setting in the config file.Articles are paginated with only three posts here for example. You can set the number of entries to show on this page with the &amp;ldquo;pagination&amp;rdquo; setting in the config file.Articles are paginated with only three posts here for example. You can set the number of entries to show on this page with the &amp;ldquo;pagination&amp;rdquo; setting in the config file.Articles are paginated with only three posts here for example. You can set the number of entries to show on this page with the &amp;ldquo;pagination&amp;rdquo; setting in the config file.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>
