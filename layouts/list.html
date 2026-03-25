@@ -4,7 +4,7 @@
       {{- .Content -}}
     </section>
     <section class="mw9 center pa3 pa4-ns">
-      {{ range .Pages }}
+      {{ range .Paginator.Pages }}
         <div class="w-100 mb4">
           {{ .Render "summary" }}
         </div>
