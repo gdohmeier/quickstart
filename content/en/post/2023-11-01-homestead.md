@@ -2,8 +2,10 @@
 title: A Gated Mess - 11/23
 date: 2023-11-01T23:35:00.000-04:00
 description: How we created our homestead
+featured_image: /images/agatedmess320.jpg
 tags:
-  - homestead,acts
+  - homestead
+  - acts
 ---
 
 ## November 2023
