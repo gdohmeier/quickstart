@@ -449,26 +449,23 @@
         </h1>
         <div class="f6 f5-l lh-copy nested-copy-line-height nested-links">
           <p>This is a test of putting some text into the page.</p>
-<pre tabindex="0"><code>backend:
-  name: git-gateway
-  branch: main # Branch to update (optional; defaults to master)
-  squash_merges: true
-  commit_messages:
-    create: &#34;Create {{collection}} “{{slug}}”&#34;
-    update: &#34;Update {{collection}} “{{slug}}”&#34;
-    delete: &#34;Delete {{collection}} “{{slug}}”&#34;
-    uploadMedia: &#34;[skip ci] Upload “{{path}}”&#34;
-    deleteMedia: &#34;[skip ci] Delete “{{path}}”&#34;
-</code></pre><h1 id="heading">heading</h1>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-md" data-lang="md"><span style="display:flex;"><span>backend:
+</span></span><span style="display:flex;"><span>  name: git-gateway
+</span></span><span style="display:flex;"><span>  branch: main # Branch to update (optional; defaults to master)
+</span></span><span style="display:flex;"><span>  squash_merges: true
+</span></span><span style="display:flex;"><span>  commit_messages:
+</span></span><span style="display:flex;"><span>    create: &#34;Create {{collection}} “{{slug}}”&#34;
+</span></span><span style="display:flex;"><span>    update: &#34;Update {{collection}} “{{slug}}”&#34;
+</span></span><span style="display:flex;"><span>    delete: &#34;Delete {{collection}} “{{slug}}”&#34;
+</span></span><span style="display:flex;"><span>    uploadMedia: &#34;[skip ci] Upload “{{path}}”&#34;
+</span></span><span style="display:flex;"><span>    deleteMedia: &#34;[skip ci] Delete “{{path}}”&#34;
+</span></span></code></pre></div><h2 id="heading">heading</h2>
 <p><del>strikethrough</del></p>
 <p>another picture</p>
 <p><img src="https://gitlab.com/uploads/-/system/user/avatar/209463/Gary_head.jpg?width=192" alt="gary" title="pic of gary from gitlab"></p>
-<h1 id="test-shortcodes">test shortcodes</h1>
-<h2 id="word-counter-shortcode">word counter shortcode</h2>
-<div class="app-container">
-    <h2>Word Count Application</h2>
-    <textarea id="input" rows="10" placeholder="Type or paste text here..."></textarea>
-    <p>Word Count: <span id="count">0</span></p>
+<h2 id="test-shortcodes">test shortcodes</h2>
+<h3 id="word-counter-shortcode">word counter shortcode</h3>
+<p>{{word-counter}}</p>
         </div>
         <a href="/post/2026-03-09-test/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
       </div>
