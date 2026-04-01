@@ -4,8 +4,10 @@ baseURL = "https://hugo-gary-quickstart.netlify.app"
 theme = ["github.com/theNewDynamic/gohugo-theme-ananke/v2"]
 resourceDir = "../resources"
 defaultContentLanguage = "en"
-sectionPagesMenu = "main"
+#sectionPagesMenu = "main"
 enableRobotsTXT = true
+
+disableKinds = ["taxonomy"] 
 
 [services.googleAnalytics]
 id = ''
@@ -37,10 +39,10 @@ url = "/tags/"
 weight = 1
 
 # this one is always positioned last (ie to the right)
-#[[menu.main]]
-#name = "Posts"
-#url = "/post/"
-#weight = 1
+[[menu.main]]
+name = "Posts"
+url = "/post/"
+weight = 1
 
 
 [sitemap]
